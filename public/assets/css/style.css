@@ -6,7 +6,8 @@
     /* Soft Gray-Blue Background */
     --accent-blue: #EBF5FB;
     --header-blue: #2E86C1;
-    --card-shadow: 0 8px 30px rgba(93, 173, 226, 0.1);
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --card-shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 body {
@@ -19,12 +20,57 @@ body {
     border: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background-color: #ffffff;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05), 0 10px 20px rgba(0, 0, 0, 0.05);
+    /* Shadow on top and bottom */
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(52, 152, 219, 0.15) !important;
+    transform: translateY(-8px);
+    box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.08), 0 15px 35px rgba(0, 0, 0, 0.1) !important;
 }
+
+/* Card Coloring Systems */
+.card-primary-soft {
+    background: linear-gradient(135deg, #ffffff 0%, #EBF5FB 100%);
+    border-top: 5px solid #5dade2 !important;
+}
+
+.card-info-soft {
+    background: linear-gradient(135deg, #ffffff 0%, #E3F2FD 100%);
+    border-top: 5px solid #3498db !important;
+}
+
+.card-success-soft {
+    background: linear-gradient(135deg, #ffffff 0%, #E8F5E9 100%);
+    border-top: 5px solid #2ecc71 !important;
+}
+
+.card-warning-soft {
+    background: linear-gradient(135deg, #ffffff 0%, #FFF3E0 100%);
+    border-top: 5px solid #f1c40f !important;
+}
+
+.card-danger-soft {
+    background: linear-gradient(135deg, #ffffff 0%, #FFEBEE 100%);
+    border-top: 5px solid #e74c3c !important;
+}
+
+/* Widget Specific Coloring */
+.widget-blue .card-header {
+    background-color: #5DADE2 !important;
+    color: white !important;
+}
+
+.widget-purple .card-header {
+    background-color: #A569BD !important;
+    color: white !important;
+}
+
+.widget-orange .card-header {
+    background-color: #E67E22 !important;
+    color: white !important;
+}
+
 
 .navbar {
     background: linear-gradient(135deg, #AED6F1 0%, #5DADE2 100%) !important;
@@ -101,6 +147,44 @@ body {
 
 .text-info {
     color: #5499C7 !important;
+}
+
+/* Dashboard Card Icons */
+.stats-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background-color: #EBF5FB;
+    color: var(--header-blue);
+    transition: all 0.3s ease;
+}
+
+.stats-card:hover .stats-icon-box {
+    transform: scale(1.1) rotate(5deg);
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+/* Large Background Icon */
+.stats-icon-bg {
+    position: absolute;
+    right: -10px;
+    bottom: -10px;
+    font-size: 5rem;
+    opacity: 0.1;
+    color: var(--header-blue);
+    transform: rotate(-15deg);
+    transition: all 0.5s ease;
+    pointer-events: none;
+}
+
+.stats-card:hover .stats-icon-bg {
+    transform: scale(1.2) rotate(0deg);
+    opacity: 0.15;
 }
 
 /* Animations */

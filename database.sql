@@ -65,6 +65,17 @@ CREATE TABLE log_aktivitas (
     FOREIGN KEY (id_user) REFERENCES users(id_user) ON DELETE SET NULL
 ) ENGINE=InnoDB;
 
+-- 8. Tabel notifikasi
+CREATE TABLE notifikasi (
+    id_notif INT AUTO_INCREMENT PRIMARY KEY,
+    id_user INT NOT NULL,
+    pesan TEXT NOT NULL,
+    tipe VARCHAR(50) DEFAULT 'info',
+    is_read TINYINT(1) DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_user) REFERENCES users(id_user) ON DELETE CASCADE
+) ENGINE=InnoDB;
+
 -- SEED DATA (Default Admin)
 -- Password 'admin123' -> 0192023a7bbd73250516f069df18b500
 INSERT INTO users (nama, username, password_md5, role) VALUES 

@@ -7,33 +7,48 @@
 
 <div class="row mb-5 fade-in">
     <div class="col-md-3 mb-3">
-        <div class="card shadow-sm border-0 rounded-4 stats-card h-100">
-            <div class="card-body">
-                <h6 class="text-muted text-uppercase mb-2">Total Alat</h6>
-                <h3 class="fw-bold text-primary mb-0"><?= $data['total_alat']; ?></h3>
+        <div class="card shadow-sm border-0 rounded-4 stats-card h-100 card-primary-soft">
+            <div class="card-body d-flex align-items-center">
+                <div class="stats-icon-box me-3">
+                    <i class="bi bi-tools"></i>
+                </div>
+                <div>
+                    <h6 class="text-muted text-uppercase small mb-1">Total Alat</h6>
+                    <h3 class="fw-bold text-primary mb-0"><?= $data['total_alat']; ?></h3>
+                </div>
             </div>
         </div>
     </div>
     
     <?php if($_SESSION['user']['role'] == 'admin') : ?>
     <div class="col-md-3 mb-3">
-        <div class="card shadow-sm border-0 rounded-4 stats-card h-100">
-            <div class="card-body">
-                <h6 class="text-muted text-uppercase mb-2">Total User</h6>
-                <h3 class="fw-bold text-info mb-0"><?= $data['total_users']; ?></h3>
+        <div class="card shadow-sm border-0 rounded-4 stats-card h-100 card-info-soft">
+            <div class="card-body d-flex align-items-center">
+                <div class="stats-icon-box me-3">
+                    <i class="bi bi-people"></i>
+                </div>
+                <div>
+                    <h6 class="text-muted text-uppercase small mb-1">Total User</h6>
+                    <h3 class="fw-bold text-info mb-0"><?= $data['total_users']; ?></h3>
+                </div>
             </div>
         </div>
     </div>
     <div class="col-md-3 mb-3">
-        <div class="card shadow-sm border-0 rounded-4 stats-card h-100">
-            <div class="card-body">
-                <h6 class="text-muted text-uppercase mb-2">Total Kategori</h6>
-                <h3 class="fw-bold text-success mb-0"><?= $data['total_kategori']; ?></h3>
+        <div class="card shadow-sm border-0 rounded-4 stats-card h-100 card-success-soft">
+            <div class="card-body d-flex align-items-center">
+                <div class="stats-icon-box me-3">
+                    <i class="bi bi-tags"></i>
+                </div>
+                <div>
+                    <h6 class="text-muted text-uppercase small mb-1">Total Kategori</h6>
+                    <h3 class="fw-bold text-success mb-0"><?= $data['total_kategori']; ?></h3>
+                </div>
             </div>
         </div>
     </div>
     <div class="col-md-3 mb-3">
-        <div class="card shadow-sm border-0 rounded-4 stats-card h-100 bg-primary text-white">
+        <div class="card shadow-sm border-0 rounded-4 h-100 bg-primary text-white card-primary">
             <div class="card-body d-flex flex-column justify-content-center align-items-center text-center">
                 <h6 class="text-white-50 text-uppercase mb-2">Menu Laporan</h6>
                 <a href="<?= BASEURL; ?>/peminjaman/laporan" target="_blank" class="btn btn-light btn-sm rounded-3 fw-bold">
@@ -44,26 +59,41 @@
     </div>
     <?php else : ?>
     <div class="col-md-3 mb-3">
-        <div class="card shadow-sm border-0 rounded-4 stats-card h-100">
-            <div class="card-body">
-                <h6 class="text-muted text-uppercase mb-2">Peminjaman Aktif</h6>
-                <h3 class="fw-bold text-warning mb-0"><?= $data['total_dipinjam']; ?></h3>
+        <div class="card shadow-sm border-0 rounded-4 stats-card h-100 card-warning-soft">
+            <div class="card-body d-flex align-items-center">
+                <div class="stats-icon-box me-3">
+                    <i class="bi bi-clock-history"></i>
+                </div>
+                <div>
+                    <h6 class="text-muted text-uppercase small mb-1">Peminjaman Aktif</h6>
+                    <h3 class="fw-bold text-warning mb-0"><?= $data['total_dipinjam']; ?></h3>
+                </div>
             </div>
         </div>
     </div>
     <div class="col-md-3 mb-3">
-        <div class="card shadow-sm border-0 rounded-4 stats-card h-100">
-            <div class="card-body">
-                <h6 class="text-muted text-uppercase mb-2">Menunggu Persetujuan</h6>
-                <h3 class="fw-bold text-success mb-0"><?= $data['total_antrean']; ?></h3>
+        <div class="card shadow-sm border-0 rounded-4 stats-card h-100 card-success-soft">
+            <div class="card-body d-flex align-items-center">
+                <div class="stats-icon-box me-3">
+                    <i class="bi bi-person-check"></i>
+                </div>
+                <div>
+                    <h6 class="text-muted text-uppercase small mb-1">Menunggu Persetujuan</h6>
+                    <h3 class="fw-bold text-success mb-0"><?= $data['total_antrean']; ?></h3>
+                </div>
             </div>
         </div>
     </div>
     <div class="col-md-3 mb-3">
-        <div class="card shadow-sm border-0 rounded-4 stats-card h-100">
-            <div class="card-body">
-                <h6 class="text-muted text-uppercase mb-2">Total Denda</h6>
-                <h3 class="fw-bold text-danger mb-0">Rp <?= number_format($data['total_denda'], 0, ',', '.'); ?></h3>
+        <div class="card shadow-sm border-0 rounded-4 stats-card h-100 card-danger-soft">
+            <div class="card-body d-flex align-items-center">
+                <div class="stats-icon-box me-3">
+                    <i class="bi bi-cash-coin text-danger"></i>
+                </div>
+                <div>
+                    <h6 class="text-muted text-uppercase small mb-1">Total Denda</h6>
+                    <h3 class="fw-bold text-danger mb-0">Rp <?= number_format($data['total_denda'], 0, ',', '.'); ?></h3>
+                </div>
             </div>
         </div>
     </div>
@@ -73,9 +103,9 @@
 <div class="row fade-in">
     <?php if($_SESSION['user']['role'] != 'admin') : ?>
     <div class="col-md-8 mb-4">
-        <div class="card shadow-sm border-0 rounded-4 overflow-hidden">
-            <div class="card-header bg-white py-3 border-0">
-                <h5 class="mb-0 fw-bold">Peminjaman Terbaru</h5>
+        <div class="card shadow border-0 rounded-4 overflow-hidden widget-blue">
+            <div class="card-header py-3 border-0">
+                <h5 class="mb-0 fw-bold"><i class="bi bi-cart-check me-2"></i>Peminjaman Terbaru</h5>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -120,9 +150,9 @@
     <?php endif; ?>
 
     <div class="<?= ($_SESSION['user']['role'] == 'admin') ? 'col-md-12' : 'col-md-4'; ?> mb-4">
-        <div class="card shadow-sm border-0 rounded-4 h-100">
-            <div class="card-header bg-white py-3 border-0">
-                <h5 class="mb-0 fw-bold">Log Aktivitas</h5>
+        <div class="card shadow border-0 rounded-4 h-100 widget-purple">
+            <div class="card-header py-3 border-0">
+                <h5 class="mb-0 fw-bold"><i class="bi bi-activity me-2"></i>Log Aktivitas</h5>
             </div>
             <div class="card-body p-0">
                 <ul class="list-group list-group-flush">

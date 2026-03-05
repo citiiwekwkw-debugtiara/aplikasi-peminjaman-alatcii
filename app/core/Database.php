@@ -11,12 +11,19 @@ class Database {
 
     public function __construct() {
         // data source name
-        $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbname;
+        $dsn = 'mysql:host=' . $this->host . ';port=' . DB_PORT . ';dbname=' . $this->dbname;
 
         $option = [
             PDO::ATTR_PERSISTENT => true,
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
         ];
+
+        // Additional SSL support for Aiven if needed
+        if (getenv('DB_SSL') === 'true') {
+            $option[PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT] = false;
+            // Some environments might require enabling SSL via a flag
+            $option[PDO::MYSQL_ATTR_SSL_CA] = ''; // Explicitly enable SSL
+        }
 
         try {
             $this->dbh = new PDO($dsn, $this->user, $this->pass, $option);
